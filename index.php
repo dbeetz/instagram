@@ -66,7 +66,7 @@
 		<h4>Picture</h4>
 		<ul>
 			<li>pictureId</li>
-			<li>pictureFile</li>
+			<li>picFile</li>
 			<li>picLocation</li>
 			<li>picCaption</li>
 			<li>picHashtag</li>
