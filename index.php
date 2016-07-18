@@ -86,10 +86,10 @@
 		</ul>
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
-		<p>Each user can post a picture many times. This is a 1-to-Many relationship.</p>
+		<p>Each user can post a picture many times. This is a 1-to-N relationship.</p>
 		<h4>User to Like</h4>
-		<p>Many users can like many pictures. This is a Many-to-Many relationship.</p>
+		<p>Many users can like many pictures. This is a M-to-N relationship.</p>
 		<h4>User to Comment</h4>
-		<p>Many users can comment on many photos. This is a Many-to-Many relationship.</p>
+		<p>Many users can comment on many photos. This is a M-to-N relationship.</p>
 	</body>
 </html>
