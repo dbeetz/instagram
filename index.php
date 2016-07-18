@@ -58,7 +58,6 @@
 			<li>userId</li>
 			<li>userSalt</li>
 			<li>userHash</li>
-			<li>userAtHandle</li>
 			<li>userName</li>
 			<li>userBio</li>
 			<li>userEmail</li>
@@ -71,7 +70,6 @@
 			<li>picFile</li>
 			<li>picLocation</li>
 			<li>picCaption</li>
-			<li>picHashtag</li>
 		</ul>
 		<h4>Like</h4>
 		<ul>
@@ -81,9 +79,9 @@
 		</ul>
 		<h4>Comment</h4>
 		<ul>
+			<li>Weak entity that connects Users to other Users</li>
 			<li>commentId</li>
 			<li>commentContent</li>
-			<li>commentHashtag</li>
 		</ul>
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
