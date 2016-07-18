@@ -74,8 +74,8 @@
 		</ul>
 		<h4>Like</h4>
 		<ul>
-			<li>likeCount</li>
 			<li>likeId?</li>
+			<li></li>
 		</ul>
 		<h4>Comment</h4>
 		<ul>
