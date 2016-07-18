@@ -18,5 +18,18 @@
 		<p>Not necessarily frustrated by her user experience with Instagram, she just needs to be able to share with her numerous friends, family and acquaintances photographs of her experiences and update them on her goings-on. She loves to be able to do this in real time, mobile first (usually never on the computer) and upload photos minutes after they are taken.</p>
 		<h3>Goals</h3>
 		<p>Along with taking photos of her with her friends and of her new experiences, Madison also has the goals of connecting with new acquaintances and friends, and viewing their photographs and shared experiences. As well as with her own photos, she likes to do this in real time and stay up to date with anything new happening with her network of social mediaites. This includes being able to talk with her friends and family by instant messages, comments, and show support for their activities by using the like functionality of the site.</p>
+		<h2><strong>Use Case</strong></h2>
+		<h3>Who:</h3>
+		<p>Madison Green</p>
+		<h3>What:</h3>
+		<p>Eating at a new restaurant that just opened in the downtown near her school with several of her friends. She has ordered a very aesthetically pleasing dish and wants to photograph it before digging in so she can share her experience with her social media network.</p>
+		<h3>When:</h3>
+		<p>1:30 PM on a Saturday afternoon.</p>
+		<h3>Where:</h3>
+		<p>Vicente Cafe</p>
+		<h3>Why:</h3>
+		<p>Madison is a very social and communicative person, and wants to share her experience and update her friends on her activity in the new restaurant. </p>
+		<h3>How:</h3>
+		<p>Using her high definition camera built into her iPhone 6S, she opens the Instagram application, taps on the Camera icon in the bottom middle of the screen, frames and takes a picture of her meal. Then, she selects a desirable filter and adds the location (aided by the fact that the Instagram application uses her iPhone’s GPS tracking services to correctly identify that she is at Vicente Cafe), select all of the media aside from Instagram she wants to post to, and finally taps Share. </p>
 	</body>
 </html>
