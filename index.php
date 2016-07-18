@@ -56,6 +56,8 @@
 		<h4>User</h4>
 		<ul>
 			<li>userId</li>
+			<li>userSalt</li>
+			<li>userHash</li>
 			<li>userAtHandle</li>
 			<li>userName</li>
 			<li>userBio</li>
@@ -75,7 +77,7 @@
 		<h4>Like</h4>
 		<ul>
 			<li>Weak entity connecting Users to Pictures</li>
-			<li>pictureId</li>
+			<li>picId</li>
 			<li>userId</li>
 		</ul>
 		<h4>Comment</h4>
