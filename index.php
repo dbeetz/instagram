@@ -6,10 +6,14 @@
 	</head>
 	<body>
 		<h1><strong>Instagram Data Design</strong></h1>
+		<!-- Adding Persona -->
 		<h2><strong>Persona</strong></h2>
-		<h4>Madison Green</h4>
-		<h4>Age 23</h4>
-		<h4>College Student</h4>
+		<h4>Name</h4>
+		<p>Madison Green</p>
+		<h4>Age</h4>
+		<p>23</p>
+		<h4>Occupation</h4>
+		<p>College Student</p>
 		<h4>Technology</h4>
 		<p>iPhone 6S with high usage cap 4G data, small PC laptop for at home and on campus use.</p>
 		<h4>Attitudes and Behaviors</h4>
@@ -18,6 +22,7 @@
 		<p>Not necessarily frustrated by her user experience with Instagram, she just needs to be able to share with her numerous friends, family and acquaintances photographs of her experiences and update them on her goings-on. She loves to be able to do this in real time, mobile first (usually never on the computer) and upload photos minutes after they are taken.</p>
 		<h4>Goals</h4>
 		<p>Along with taking photos of her with her friends and of her new experiences, Madison also has the goals of connecting with new acquaintances and friends, and viewing their photographs and shared experiences. As well as with her own photos, she likes to do this in real time and stay up to date with anything new happening with her network of social mediaites. This includes being able to talk with her friends and family by instant messages, comments, and show support for their activities by using the like functionality of the site.</p>
+		<!--Adding Use Case -->
 		<h2><strong>Use Case</strong></h2>
 		<h4>Who:</h4>
 		<p>Madison Green</p>
@@ -31,6 +36,7 @@
 		<p>Madison is a very social and communicative person, and wants to share her experience and update her friends on her activity in the new restaurant. </p>
 		<h4>How:</h4>
 		<p>Using her high definition camera built into her iPhone 6S, she opens the Instagram application, taps on the Camera icon in the bottom middle of the screen, frames and takes a picture of her meal. Then, she selects a desirable filter and adds the location (aided by the fact that the Instagram application uses her iPhone’s GPS tracking services to correctly identify that she is at Vicente Cafe), select all of the media aside from Instagram she wants to post to, and finally taps Share. </p>
+		<!-- Adding Interaction Flow List -->
 		<h2><strong>Interaction Flow for Posting a Photo to Instagram</strong></h2>
 		<ol>
 			<li>Madison opens the Instagram application on her iPhone 6S.</li>
@@ -44,6 +50,7 @@
 			<li>Selects other social media networks she would like to post the photograph to if she would like.</li>
 			<li>Taps Share.</li>
 		</ol>
+		<!-- Adding Conceptual Model -->
 		<h2><strong>Conceptual Model</strong></h2>
 		<h3>Entities and Attributes</h3>
 		<h4>User</h4>
