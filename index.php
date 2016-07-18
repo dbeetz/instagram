@@ -72,7 +72,6 @@
 			<li>picLocation</li>
 			<li>picCaption</li>
 			<li>picHashtag</li>
-			<li>picUserTag</li>
 		</ul>
 		<h4>Like</h4>
 		<ul>
