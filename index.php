@@ -74,14 +74,14 @@
 		<h4>Like</h4>
 		<ul>
 			<li>Weak entity connecting Users to Pictures</li>
-			<li>picId</li>
-			<li>userId</li>
+			<li>likePicId</li>
+			<li>likeUserId</li>
 		</ul>
 		<h4>Comment</h4>
 		<ul>
 			<li>Weak entity that connects Users to other Users</li>
-			<li>picId</li>
-			<li>userId</li>
+			<li>commentPicId</li>
+			<li>commentUserId</li>
 			<li>commentId</li>
 			<li>commentContent</li>
 		</ul>
