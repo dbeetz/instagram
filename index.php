@@ -31,5 +31,18 @@
 		<p>Madison is a very social and communicative person, and wants to share her experience and update her friends on her activity in the new restaurant. </p>
 		<h3>How:</h3>
 		<p>Using her high definition camera built into her iPhone 6S, she opens the Instagram application, taps on the Camera icon in the bottom middle of the screen, frames and takes a picture of her meal. Then, she selects a desirable filter and adds the location (aided by the fact that the Instagram application uses her iPhone’s GPS tracking services to correctly identify that she is at Vicente Cafe), select all of the media aside from Instagram she wants to post to, and finally taps Share. </p>
+		<h2><strong>Interaction Flow for Posting a Photo to Instagram</strong></h2>
+		<ol>
+			<li>Madison opens the Instagram application on her iPhone 6S.</li>
+			<li>Taps on the Camera icon in the bottom middle of her screen.</li>
+			<li>Frames the object to photograph and taps the circle to take the picture.</li>
+			<li>Chooses a filter and lighting if she would like.</li>
+			<li>Taps Next.</li>
+			<li>Writes a Caption.</li>
+			<li>Tags people if needed.</li>
+			<li>Adds location.</li>
+			<li>Selects other social media networks she would like to post the photograph to if she would like.</li>
+			<li>Taps Share.</li>
+		</ol>
 	</body>
 </html>
