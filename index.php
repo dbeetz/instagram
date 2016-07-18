@@ -56,7 +56,7 @@
 		<h4>User</h4>
 		<ul>
 			<li>userId</li>
-			<li>userHandle</li>
+			<li>userAtHandle</li>
 			<li>userName</li>
 			<li>userBio</li>
 			<li>userEmail</li>
