@@ -63,12 +63,12 @@
 			<li>picLocation</li>
 			<li>picCaption</li>
 			<li>picHashtag</li>
-			<li>picComment</li>
 			<li>picUserTag</li>
 		</ul>
 		<h4>Like</h4>
 		<ul>
 			<li>likeCount</li>
+			<li>likeId?</li>
 		</ul>
 		<h4>Comment</h4>
 		<ul>
@@ -83,6 +83,5 @@
 		<p>Many users can like many pictures. This is a Many-to-Many relationship.</p>
 		<h4>User to Comment</h4>
 		<p>Many users can comment on many photos. This is a Many-to-Many relationship.</p>
-		<h4></h4>
 	</body>
 </html>
