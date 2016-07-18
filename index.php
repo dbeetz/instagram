@@ -74,8 +74,9 @@
 		</ul>
 		<h4>Like</h4>
 		<ul>
-			<li>likeId?</li>
-			<li></li>
+			<li>Weak entity connecting Users to Pictures</li>
+			<li>pictureId</li>
+			<li>userId</li>
 		</ul>
 		<h4>Comment</h4>
 		<ul>
