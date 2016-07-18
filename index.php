@@ -80,6 +80,8 @@
 		<h4>Comment</h4>
 		<ul>
 			<li>Weak entity that connects Users to other Users</li>
+			<li>userId</li>
+			<li>picId</li>
 			<li>commentId</li>
 			<li>commentContent</li>
 		</ul>
