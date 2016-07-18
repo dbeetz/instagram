@@ -44,7 +44,7 @@
 			<li>Selects other social media networks she would like to post the photograph to if she would like.</li>
 			<li>Taps Share.</li>
 		</ol>
-		<h2>Conceptual Model</h2>
+		<h2><strong>Conceptual Model</strong></h2>
 		<h3>Entities and Attributes</h3>
 		<h4>User</h4>
 		<ul>
@@ -67,8 +67,7 @@
 		<h4>Like</h4>
 		<ul>
 			<li>likeCount</li>
-			<li></li>
-			<li></li>
 		</ul>
+		<h3>Relationships</h3>
 	</body>
 </html>
