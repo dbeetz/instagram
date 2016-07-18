@@ -58,6 +58,7 @@
 		</ul>
 		<h4>Picture</h4>
 		<ul>
+			<li>pictureId</li>
 			<li>picture</li>
 			<li>picLocation</li>
 			<li>picCaption</li>
@@ -68,12 +69,16 @@
 		<ul>
 			<li>likeCount</li>
 		</ul>
+		<h4>Comment</h4>
+		<ul>
+			<li>commentId</li>
+		</ul>
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
-		<p>Each user can post a picture many times. This is a 1:Many relationship.</p>
+		<p>Each user can post a picture many times. This is a 1-to-Many relationship.</p>
 		<h4>User to Like</h4>
-		<p>Many users can like a picture once, but can like many pictures. This is a Many:Many relationship.</p>
+		<p>Many users can like a picture once, but can like many pictures. This is a Many-to-Many relationship.</p>
 		<h4>User to Comment</h4>
-		<p>Many users can comment on many photos. This is a Many:Many relationship.</p>
+		<p>Many users can comment on many photos. This is a Many-to-Many relationship.</p>
 	</body>
 </html>
