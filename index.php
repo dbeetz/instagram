@@ -76,6 +76,7 @@
 			<li>Weak entity connecting Users to Pictures</li>
 			<li>likePicId</li>
 			<li>likeUserId</li>
+			<li>likeDate</li>
 		</ul>
 		<h4>Comment</h4>
 		<ul>
