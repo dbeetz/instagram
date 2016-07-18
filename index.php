@@ -85,6 +85,7 @@
 			<li>commentUserId</li>
 			<li>commentId</li>
 			<li>commentContent</li>
+			<li>commentDate</li>
 		</ul>
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
