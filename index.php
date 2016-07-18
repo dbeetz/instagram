@@ -44,5 +44,31 @@
 			<li>Selects other social media networks she would like to post the photograph to if she would like.</li>
 			<li>Taps Share.</li>
 		</ol>
+		<h2>Conceptual Model</h2>
+		<h3>Entities and Attributes</h3>
+		<h4>User</h4>
+		<ul>
+			<li>userId</li>
+			<li>userHandle</li>
+			<li>userName</li>
+			<li>userBio</li>
+			<li>userEmail</li>
+			<li>userPhone</li>
+			<li>userGender</li>
+		</ul>
+		<h4>Picture</h4>
+		<ul>
+			<li>picture</li>
+			<li>picLocation</li>
+			<li>picCaption</li>
+			<li>picHashtag</li>
+			<li>picComment</li>
+		</ul>
+		<h4>Like</h4>
+		<ul>
+			<li>likeCount</li>
+			<li></li>
+			<li></li>
+		</ul>
 	</body>
 </html>
