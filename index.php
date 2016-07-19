@@ -54,7 +54,7 @@
 		<h2><strong>Conceptual Model</strong></h2>
 		<h3>Entities and Attributes</h3>
 		<h4>User</h4>
-		<ul>
+		<ol>
 			<li>userId</li>
 			<li>userSalt</li>
 			<li>userHash</li>
@@ -63,30 +63,30 @@
 			<li>userEmail</li>
 			<li>userPhone</li>
 			<li>userGender</li>
-		</ul>
+		</ol>
 		<h4>Picture</h4>
-		<ul>
+		<ol>
 			<li>picId</li>
 			<li>picFile</li>
 			<li>picLocation</li>
 			<li>picCaption</li>
-		</ul>
+		</ol>
 		<h4>Like</h4>
-		<ul>
+		<ol>
 			<li>Weak entity connecting Users to Pictures</li>
 			<li>likePicId</li>
 			<li>likeUserId</li>
 			<li>likeDate</li>
-		</ul>
+		</ol>
 		<h4>Comment</h4>
-		<ul>
+		<ol>
 			<li>Weak entity that connects Users to Pictures</li>
 			<li>commentPicId</li>
 			<li>commentUserId</li>
 			<li>commentId</li>
 			<li>commentContent</li>
 			<li>commentDate</li>
-		</ul>
+		</ol>
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
 		<p>Each user can post a picture many times. This is a 1-to-n relationship.</p>
