@@ -73,14 +73,12 @@
 		</ol>
 		<h4>Like</h4>
 		<ol>
-			<li>Weak entity connecting Users to Pictures</li>
 			<li>likePicId</li>
 			<li>likeUserId</li>
 			<li>likeDate</li>
 		</ol>
 		<h4>Comment</h4>
 		<ol>
-			<li>Weak entity that connects Users to Pictures</li>
 			<li>commentPicId</li>
 			<li>commentUserId</li>
 			<li>commentId</li>
