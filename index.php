@@ -55,29 +55,30 @@
 		<h3>Entities and Attributes</h3>
 		<h4>User</h4>
 		<ol>
-			<li>userId</li>
-			<li>userSalt</li>
-			<li>userHash</li>
-			<li>userUsername</li>
 			<li>userBio</li>
 			<li>userEmail</li>
-			<li>userPhone</li>
 			<li>userGender</li>
+			<li>userHash</li>
+			<li>userId</li>
+			<li>userName</li>
+			<li>userPhone</li>
+			<li>userSalt</li>
+			<li>userUsername</li>
 		</ol>
 		<h4>Picture</h4>
 		<ol>
-			<li>pictureId</li>
-			<li>pictureFile</li>
-			<li>pictureLocation</li>
 			<li>pictureCaption</li>
+			<li>pictureFile</li>
+			<li>pictureId</li>
+			<li>pictureLocation</li>
 		</ol>
 		<h4>Comment</h4>
 		<ol>
-			<li>commentPictureId</li>
-			<li>commentUserId</li>
-			<li>commentId</li>
 			<li>commentContent</li>
 			<li>commentDate</li>
+			<li>commentId</li>
+			<li>commentPictureId</li>
+			<li>commentUserId</li>
 		</ol>
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
