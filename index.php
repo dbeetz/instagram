@@ -68,10 +68,10 @@
 		<h4>Picture</h4>
 		<ol>
 			<li>pictureCaption</li>
-			<li>pictureDate</li>
 			<li>pictureFile</li>
 			<li>pictureId</li>
 			<li>pictureLocation</li>
+			<li>pictureTime</li>
 		</ol>
 		<h4>Comment</h4>
 		<ol>
