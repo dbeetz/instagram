@@ -6,7 +6,9 @@ CREATE TABLE user (
 	userName VARCHAR(32),
 	userPhone VARCHAR(32),
 	userBio VARCHAR(2000),
-	-- add Hash, Salt and Gender here when we know the proper commands
+	userSalt CHAR(64),
+	userHash CHAR(128),
+	-- add Gender here when we know the proper commands
 	UNIQUE(userEmail),
 	UNIQUE(userUsername),
 	PRIMARY KEY(userId)
@@ -19,7 +21,7 @@ CREATE TABLE picture (
 	pictureCaption VARCHAR(100),
 	pictureTimestamp TIMESTAMP NOT NULL,
 	pictureLocation POINT,
--- add File here when we know the proper commands
+	pictureFile VARCHAR(255),
 	FOREIGN KEY (pictureUserId) REFERENCES user(userId),
 	PRIMARY KEY (pictureId)
 );

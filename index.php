@@ -55,11 +55,11 @@
 		<h3>Entities and Attributes</h3>
 		<h4>User</h4>
 		<ol>
+			<li>userId</li>
 			<li>userBio</li>
 			<li>userEmail</li>
 			<li>userGender</li>
 			<li>userHash</li>
-			<li>userId</li>
 			<li>userName</li>
 			<li>userPhone</li>
 			<li>userSalt</li>
@@ -67,23 +67,23 @@
 		</ol>
 		<h4>Picture</h4>
 		<ol>
+			<li>pictureId</li>
+			<li>pictureUserId</li>
 			<li>pictureCaption</li>
 			<li>pictureFile</li>
-			<li>pictureId</li>
 			<li>pictureLocation</li>
 			<li>pictureTimestamp</li>
-			<li>pictureUserId</li>
 		</ol>
 		<h4>Comment</h4>
 		<ol>
-			<li>commentContent</li>
 			<li>commentId</li>
 			<li>commentPictureId</li>
+			<li>commentContent</li>
 			<li>commentUserId</li>
 		</ol>
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
-		<p>Each user can post a picture many times. This is a 1-to-n relationship.</p>
+		<p>Each user can post a picture many times. This is a 1-to-<var>n</var> relationship.</p>
 		<h4>User to Comment</h4>
 		<p>Many users can comment on many photos, many times. This is a m-to-n relationship.</p>
 	</body>
