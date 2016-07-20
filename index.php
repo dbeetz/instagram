@@ -68,6 +68,7 @@
 		<h4>Picture</h4>
 		<ol>
 			<li>pictureCaption</li>
+			<li>pictureDate</li>
 			<li>pictureFile</li>
 			<li>pictureId</li>
 			<li>pictureLocation</li>
@@ -75,7 +76,6 @@
 		<h4>Comment</h4>
 		<ol>
 			<li>commentContent</li>
-			<li>commentDate</li>
 			<li>commentId</li>
 			<li>commentPictureId</li>
 			<li>commentUserId</li>
