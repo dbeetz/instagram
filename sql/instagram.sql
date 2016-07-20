@@ -8,7 +8,7 @@ CREATE TABLE user (
 	userBio VARCHAR(2000),
 	userSalt CHAR(64),
 	userHash CHAR(128),
-	-- add Gender here when we know the proper commands
+	userGender CHAR(1),
 	UNIQUE(userEmail),
 	UNIQUE(userUsername),
 	PRIMARY KEY(userId)
@@ -29,10 +29,9 @@ CREATE TABLE picture (
 -- adding comment entity
 CREATE TABLE comment (
 	commentId INT UNSIGNED AUTO_INCREMENT NOT NULL,
-	commentContent VARCHAR(140) NOT NULL,
 	commentUserId INT UNSIGNED NOT NULL,
 	commentPictureId INT UNSIGNED NOT NULL,
-	-- taking a shot at how to set up a semi-weak entity's keys
+	commentContent VARCHAR(140) NOT NULL,
 	FOREIGN KEY (commentUserId) REFERENCES user(userId),
 	FOREIGN KEY (commentPictureId) REFERENCES picture(pictureId),
 	PRIMARY KEY (commentId)
