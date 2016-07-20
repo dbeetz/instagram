@@ -72,6 +72,7 @@
 			<li>pictureId</li>
 			<li>pictureLocation</li>
 			<li>pictureTimestamp</li>
+			<li>pictureUserId</li>
 		</ol>
 		<h4>Comment</h4>
 		<ol>
