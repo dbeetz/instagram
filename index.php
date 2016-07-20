@@ -77,9 +77,9 @@
 		<h4>Comment</h4>
 		<ol>
 			<li>commentId</li>
+			<li>commentUserId</li>
 			<li>commentPictureId</li>
 			<li>commentContent</li>
-			<li>commentUserId</li>
 		</ol>
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
