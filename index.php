@@ -58,7 +58,7 @@
 			<li>userId</li>
 			<li>userSalt</li>
 			<li>userHash</li>
-			<li>userName</li>
+			<li>userUsername</li>
 			<li>userBio</li>
 			<li>userEmail</li>
 			<li>userPhone</li>
@@ -71,12 +71,6 @@
 			<li>pictureLocation</li>
 			<li>pictureCaption</li>
 		</ol>
-		<h4>Like</h4>
-		<ol>
-			<li>likePictureId</li>
-			<li>likeUserId</li>
-			<li>likeDate</li>
-		</ol>
 		<h4>Comment</h4>
 		<ol>
 			<li>commentPictureId</li>
@@ -88,9 +82,7 @@
 		<h3>Relationships</h3>
 		<h4>User to Picture</h4>
 		<p>Each user can post a picture many times. This is a 1-to-n relationship.</p>
-		<h4>User to Like</h4>
-		<p>Many users can like many pictures. This is a m-to-n relationship.</p>
 		<h4>User to Comment</h4>
-		<p>Many users can comment on many photos. This is a m-to-n relationship.</p>
+		<p>Many users can comment on many photos, many times. This is a m-to-n relationship.</p>
 	</body>
 </html>
