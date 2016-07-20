@@ -71,7 +71,7 @@
 			<li>pictureFile</li>
 			<li>pictureId</li>
 			<li>pictureLocation</li>
-			<li>pictureTime</li>
+			<li>pictureTimestamp</li>
 		</ol>
 		<h4>Comment</h4>
 		<ol>
