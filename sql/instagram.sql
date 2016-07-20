@@ -1,14 +1,14 @@
 -- adding user entity
 CREATE TABLE user (
 	userId INT UNSIGNED AUTO_INCREMENT NOT NULL,
-	userUsername VARCHAR(32) NOT NULL,
+	userBio VARCHAR(2000),
 	userEmail VARCHAR(128) NOT NULL,
+	userGender CHAR(1),
+	userHash CHAR(128),
 	userName VARCHAR(32),
 	userPhone VARCHAR(32),
-	userBio VARCHAR(2000),
 	userSalt CHAR(64),
-	userHash CHAR(128),
-	userGender CHAR(1),
+	userUsername VARCHAR(32) NOT NULL,
 	UNIQUE(userEmail),
 	UNIQUE(userUsername),
 	PRIMARY KEY(userId)
@@ -19,9 +19,9 @@ CREATE TABLE picture (
 	pictureId INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	pictureUserId INT UNSIGNED NOT NULL,
 	pictureCaption VARCHAR(100),
-	pictureTimestamp TIMESTAMP NOT NULL,
-	pictureLocation POINT,
 	pictureFile VARCHAR(255),
+	pictureLocation POINT,
+	pictureTimestamp TIMESTAMP NOT NULL,
 	FOREIGN KEY (pictureUserId) REFERENCES user(userId),
 	PRIMARY KEY (pictureId)
 );

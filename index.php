@@ -85,6 +85,6 @@
 		<h4>User to Picture</h4>
 		<p>Each user can post a picture many times. This is a 1-to-<var>n</var> relationship.</p>
 		<h4>User to Comment</h4>
-		<p>Many users can comment on many photos, many times. This is a m-to-n relationship.</p>
+		<p>Many users can comment on many photos, many times. This is a <var>m</var>-to-<var>n</var> relationship.</p>
 	</body>
 </html>
