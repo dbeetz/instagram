@@ -66,20 +66,20 @@
 		</ol>
 		<h4>Picture</h4>
 		<ol>
-			<li>picId</li>
-			<li>picFile</li>
-			<li>picLocation</li>
-			<li>picCaption</li>
+			<li>pictureId</li>
+			<li>pictureFile</li>
+			<li>pictureLocation</li>
+			<li>pictureCaption</li>
 		</ol>
 		<h4>Like</h4>
 		<ol>
-			<li>likePicId</li>
+			<li>likePictureId</li>
 			<li>likeUserId</li>
 			<li>likeDate</li>
 		</ol>
 		<h4>Comment</h4>
 		<ol>
-			<li>commentPicId</li>
+			<li>commentPictureId</li>
 			<li>commentUserId</li>
 			<li>commentId</li>
 			<li>commentContent</li>
