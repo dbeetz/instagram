@@ -32,7 +32,7 @@ trait ValidateDate {
 
 		// if we got here, the date is clean
 		$newDate = \DateTime::createFromFormat("Y-m-d H:i:s", $newDate . " 00:00:00");
-		return($newDate);
+		return ($newDate);
 	}
 
 
@@ -52,7 +52,7 @@ trait ValidateDate {
 	private static function validateDateTime($newDateTime) {
 		// base case: if the date is a DateTime object, there's no work to be done
 		if(is_object($newDateTime) === true && get_class($newDateTime) === "DateTime") {
-			return($newDateTime);
+			return ($newDateTime);
 		}
 		try {
 			list($date, $time) = explode(" ", $newDateTime);
@@ -62,8 +62,8 @@ trait ValidateDate {
 			$intervalSpec = "PT" . $hour . "H" . $minute . "M" . $second . "S";
 			$interval = new \DateInterval($intervalSpec);
 			$date->add($interval);
-			return($date);
-		}catch(\InvalidArgumentException $invalidArgument) {
+			return ($date);
+		} catch(\InvalidArgumentException $invalidArgument) {
 			//rethrow the exception to the caller
 			throw(new  \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
 		} catch(\RangeException $range) {
@@ -79,6 +79,7 @@ trait ValidateDate {
 
 
 	}
+
 	/**
 	 * custom filter for mySQL style dates
 	 *
@@ -105,10 +106,11 @@ trait ValidateDate {
 
 
 		// verify the time is really a valid wall clock time
-		if($hour < 0 || $hour >= 24 || $minute < 0 || $minute >= 60 || $second < 0  || $second >= 60) {
+		if($hour < 0 || $hour >= 24 || $minute < 0 || $minute >= 60 || $second < 0 || $second >= 60) {
 			throw(new \RangeException("date is not a valid wall clock time"));
 		}
 
 		// if we got here, the date is clean
-		return($newTime);
+		return ($newTime);
 	}
+}
