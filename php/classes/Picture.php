@@ -80,4 +80,34 @@ class Picture implements \JsonSerializable {
 				throw(new \Exception($exception->getMessage(), 0, $exception));
 		}
 	}
+	/**
+	 * accessor method for picture id
+	 *
+	 * @return int|null value of picture id
+	 **/
+	public function getPictureId() {
+			return($this->pictureId);
+	}
+	/**
+	 * mutator function for picture id
+	 *
+	 * @param int|null $newPictureId value of new picture id
+	 * @throws \RangeException if $newPictureId is not positive
+	 * @throws \TypeError if $newPictureId is not an integer
+	 **/
+	public function setPictureId(int $newPictureId = null) {
+			//if the picture id is null, this is a new picture without a mySQL assigned id (yet)
+			if($newPictureId === null) {
+					$this->pictureId = null;
+					return;
+			}
+
+			//verify that the picture id is positive
+			if ($newPictureId <= 0) {
+					throw(new \RangeException("picture id is not positive"));
+			}
+
+			//convert and store the picture id
+			$this->pictureId = $newPictureId;
+	}
 }
