@@ -15,7 +15,7 @@ public function getUserId() {
  *
  * @param int|null $newUserId new value of user id
  * @throws \RangeException if $newUserId is not positive
- * @throws \TypeError if $newTweetId is not an integer
+ * @throws \TypeError if $newUserId is not an integer
  **/
 public function setUserId(int $newUserId = null) {
 	// if the user id is null, this is a new user id
@@ -30,4 +30,3 @@ public function setUserId(int $newUserId = null) {
 	// assign the new user id
 	$this->userId = $newUserId;
 }
-?>
