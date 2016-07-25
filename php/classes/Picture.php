@@ -35,7 +35,7 @@ class Picture implements \JsonSerializable {
 	private $pictureFile;
 	/**
 	 * location of where the Picture was taken, indicated by lat/long coordinates
-	 * @var point $pictureLocation
+	 * @var Point $pictureLocation
 	 **/
 	private $pictureLocation;
 	/**
@@ -52,7 +52,7 @@ class Picture implements \JsonSerializable {
 	 * @param string $newPictureCaption string content containing the caption data the User posted with a new Picture
 	 * @param \DateTime|string|null $newPictureTimestamp date and time Picture was posted or null if set to current date and time
 	 * @param string $newPictureFile data containing the Picture
-	 * @param point $newPictureLocation latitude/longitude location of this Picture
+	 * @param Point $newPictureLocation latitude/longitude location of this Picture
 	 * @throws \InvalidArgumentException if data types are not valid
 	 * @throws \RangeException if data values are out of bounds (strings are too long, negative integers, etc.)
 	 * @throws \TypeError if data types violate type hints
