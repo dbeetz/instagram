@@ -220,6 +220,13 @@ class Picture {
 		if(empty($newPicturePath) === true) {
 				throw(new \InvalidArgumentException("picture path is empty or insecure"));
 		}
-		//verify the picture
+
+		//verify the picture path will fit in the database
+		if(strlen($newPicturePath) > 255) {
+				throw(new \RangeException("picture path is too large"));
+		}
+
+		//store the picture path
+		$this->picturePath = $newPicturePath;
 	}
 }
