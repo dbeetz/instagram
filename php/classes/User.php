@@ -1,5 +1,5 @@
 <?php
-namespace Edu\Cnm\dbeets\InstagramDataDesign;
+namespace Edu\Cnm\Dbeets\InstagramDataDesign;
 
 /**
 * accessor method for user id
