@@ -34,11 +34,6 @@ class Picture implements \JsonSerializable {
 	 **/
 	private $pictureFile;
 	/**
-	 * location of where the Picture was taken, indicated by lat/long coordinates
-	 * @var Point $pictureLocation
-	 **/
-	private $pictureLocation;
-	/**
 	 * time and date the Picture was taken, in a PHP DateTime object
 	 * @var \DateTime $pictureTimestamp
 	 **/
@@ -52,20 +47,18 @@ class Picture implements \JsonSerializable {
 	 * @param string $newPictureCaption string content containing the caption data the User posted with a new Picture
 	 * @param \DateTime|string|null $newPictureTimestamp date and time Picture was posted or null if set to current date and time
 	 * @param string $newPictureFile data containing the Picture
-	 * @param Point $newPictureLocation latitude/longitude location of this Picture
 	 * @throws \InvalidArgumentException if data types are not valid
 	 * @throws \RangeException if data values are out of bounds (strings are too long, negative integers, etc.)
 	 * @throws \TypeError if data types violate type hints
 	 * @throws \Exception if some other exception occurs
 	 **/
-	public function __construct(int $newPictureId = null, int $newPictureUserId, string $newPictureCaption, $newPictureTimestamp = null, string $newPictureFile, point $newPictureLocation) {
+	public function __construct(int $newPictureId = null, int $newPictureUserId, string $newPictureCaption, $newPictureTimestamp = null, string $newPictureFile) {
 		try {
 				$this->setPictureId($newPictureId);
 				$this->setPictureUserId($newPictureUserId);
 				$this->setPictureCaption($newPictureCaption);
 				$this->setPictureTimestamp($newPictureTimestamp);
 				$this->setPictureFile($newPictureFile);
-				$this->setPictureLocation($newPictureLocation);
 		} catch(\InvalidArgumentException $invalidArgument) {
 				//rethrow the exception to the caller
 				throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0,$invalidArgument));
@@ -109,5 +102,35 @@ class Picture implements \JsonSerializable {
 
 			//convert and store the picture id
 			$this->pictureId = $newPictureId;
+	}
+	/**
+	 * accessor method for picture user id
+	 *
+	 * @return int|null $newPictureUserId value of new user picture id
+	 **/
+	public function getPictureUserId() {
+		return($this->pictureUserId);
+	}
+	/**
+	 * mutator method for picture user id
+	 *
+	 * @param int|null $newPictureUserId value of new picture user id
+	 * @throws \RangeException if new picture user id is not positive
+	 * @throws \TypeError if new picture user id is not an integer
+	 **/
+	public function setPictureUserId(int $newPictureUserId = null) {
+		//if the picture user id is null, this is a new picture user id without a mySQL assigned id (yet)
+		if($newPictureUserId === null) {
+			$this->pictureUserId = null;
+			return;
+		}
+
+		//verify that the picture user id is positive
+		if($newPictureUserId <= 0) {
+				throw(new \RangeException("picture user id is not positive"));
+		}
+
+		//convert and store the picture user id
+		$this->pictureUserId = $newPictureUserId;
 	}
 }
