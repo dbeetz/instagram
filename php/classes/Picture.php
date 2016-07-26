@@ -133,4 +133,68 @@ class Picture implements \JsonSerializable {
 		//convert and store the picture user id
 		$this->pictureUserId = $newPictureUserId;
 	}
+	/**
+	 * accessor method for picture caption content
+	 *
+	 * @return string value of picture caption content
+	 **/
+	public function getPictureCaption() {
+		return($this->pictureCaption);
+	}
+	/**
+	 * mutator method for picture caption content
+	 *
+	 * @param string $newPictureCaption new value of picture caption content
+	 * @throws \InvalidArgumentException if $newPictureCaption is not a string or insecure
+	 * @throws \RangeException if $newPictureCaption is > 100 characters
+	 * @throws \TypeError if $newPictureCaption is not a string
+	 **/
+	public function setPictureCaption(string $newPictureCaption) {
+		//verify the picture content is secure
+		$newPictureCaption = trim($newPictureCaption);
+		$newPictureCaption = filter_var($newPictureCaption, FILTER_SANITIZE_STRING);
+		if(empty($newPictureCaption) === true) {
+				throw (new \InvalidArgumentException("picture caption content is empty or insecure"));
+		}
+
+		//verify the picture caption content will fit in the database
+		if(strlen($newPictureCaption) > 100) {
+				throw (new \RangeException("picture caption content is too large"));
+		}
+
+		//store the picture caption content
+		$this->pictureCaption = $newPictureCaption;
+	}
+	/**
+	 * accessor method for picture timestamp
+	 *
+	 * @return \DateTime value for picture timestamp
+	 **/
+	public function getPictureTimestamp() {
+		return($this->pictureTimestamp);
+	}
+	/**
+	 * mutator method for picture timestamp
+	 *
+	 * @param \DateTime|string|null $newPictureTimestamp picture timestamp as a DateTime object or string (or null to load the current time)
+	 * @throws \InvalidArgumentException if $newPictureTimestamp is not a valid object or a string
+	 * @throws \RangeException if $newPictureTimestamp is a date that does not exist
+	 **/
+	public function setPictureTimestamp($newPictureTimestamp = null) {
+		//base case: if the date is null, use the current date and time
+		if($newPictureTimestamp === null) {
+			$this->pictureTimestamp = new \DateTime();
+			return;
+		}
+
+		//store the picture date
+		try {
+				$newPictureTimestamp = self::validateDateTime($newPictureTimestamp);
+		} catch(\InvalidArgumentException $invalidArgument) {
+				throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(\RangeException $range) {
+				throw(new \RangeException($range->getMessage(), 0, $range));
+		}
+		$this->pictureTimestamp = $newPictureTimestamp;
+	}
 }
