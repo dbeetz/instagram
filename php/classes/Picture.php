@@ -1,5 +1,5 @@
 <?php
-namespace Edu\Cnm\dbeets\InstagramDataDesign;
+namespace Edu\Cnm\Dbeets\InstagramDataDesign;
 
 require_once("autoload.php");
 
@@ -11,7 +11,7 @@ require_once("autoload.php");
  * @author Devon Beets <dbeetzz@gmail.com>
  * @version 3.0.0
  **/
-class Picture implements \JsonSerializable {
+class Picture {
 	use ValidateDate;
 	/**
 	 * id for this Picture; this is the primary key
@@ -29,10 +29,10 @@ class Picture implements \JsonSerializable {
 	 **/
 	private $pictureCaption;
 	/**
-	 * file of the Picture posted
-	 * @var string $pictureFile
+	 * path of the Picture posted
+	 * @var string $picturePath
 	 **/
-	private $pictureFile;
+	private $picturePath;
 	/**
 	 * time and date the Picture was taken, in a PHP DateTime object
 	 * @var \DateTime $pictureTimestamp
@@ -44,21 +44,21 @@ class Picture implements \JsonSerializable {
 	 *
 	 * @param int|null $newPictureId id of this Picture or null if a new Picture
 	 * @param int $newPictureUserId id of the User that posted this Picture
-	 * @param string $newPictureCaption string content containing the caption data the User posted with a new Picture
+	 * @param string $newPictureCaption string containing the caption data the User posted with a new Picture
 	 * @param \DateTime|string|null $newPictureTimestamp date and time Picture was posted or null if set to current date and time
-	 * @param string $newPictureFile data containing the Picture
+	 * @param string $newPicturePath data containing the Picture
 	 * @throws \InvalidArgumentException if data types are not valid
 	 * @throws \RangeException if data values are out of bounds (strings are too long, negative integers, etc.)
 	 * @throws \TypeError if data types violate type hints
 	 * @throws \Exception if some other exception occurs
 	 **/
-	public function __construct(int $newPictureId = null, int $newPictureUserId, string $newPictureCaption, $newPictureTimestamp = null, string $newPictureFile) {
+	public function __construct(int $newPictureId = null, int $newPictureUserId, string $newPictureCaption, $newPictureTimestamp = null, string $newPicturePath) {
 		try {
 				$this->setPictureId($newPictureId);
 				$this->setPictureUserId($newPictureUserId);
 				$this->setPictureCaption($newPictureCaption);
 				$this->setPictureTimestamp($newPictureTimestamp);
-				$this->setPictureFile($newPictureFile);
+				$this->setPicturePath($newPicturePath);
 		} catch(\InvalidArgumentException $invalidArgument) {
 				//rethrow the exception to the caller
 				throw(new \InvalidArgumentException($invalidArgument->getMessage(), 0,$invalidArgument));
@@ -134,35 +134,35 @@ class Picture implements \JsonSerializable {
 		$this->pictureUserId = $newPictureUserId;
 	}
 	/**
-	 * accessor method for picture caption content
+	 * accessor method for picture caption
 	 *
-	 * @return string value of picture caption content
+	 * @return string value of picture caption conten
 	 **/
 	public function getPictureCaption() {
 		return($this->pictureCaption);
 	}
 	/**
-	 * mutator method for picture caption content
+	 * mutator method for picture caption
 	 *
-	 * @param string $newPictureCaption new value of picture caption content
+	 * @param string $newPictureCaption new value of picture caption
 	 * @throws \InvalidArgumentException if $newPictureCaption is not a string or insecure
 	 * @throws \RangeException if $newPictureCaption is > 100 characters
 	 * @throws \TypeError if $newPictureCaption is not a string
 	 **/
 	public function setPictureCaption(string $newPictureCaption) {
-		//verify the picture content is secure
+		//verify the picture caption is secure
 		$newPictureCaption = trim($newPictureCaption);
 		$newPictureCaption = filter_var($newPictureCaption, FILTER_SANITIZE_STRING);
 		if(empty($newPictureCaption) === true) {
-				throw (new \InvalidArgumentException("picture caption content is empty or insecure"));
+				throw (new \InvalidArgumentException("picture caption is empty or insecure"));
 		}
 
-		//verify the picture caption content will fit in the database
+		//verify the picture caption will fit in the database
 		if(strlen($newPictureCaption) > 100) {
-				throw (new \RangeException("picture caption content is too large"));
+				throw (new \RangeException("picture caption is too large"));
 		}
 
-		//store the picture caption content
+		//store the picture caption
 		$this->pictureCaption = $newPictureCaption;
 	}
 	/**
@@ -196,5 +196,30 @@ class Picture implements \JsonSerializable {
 				throw(new \RangeException($range->getMessage(), 0, $range));
 		}
 		$this->pictureTimestamp = $newPictureTimestamp;
+	}
+	/**
+	 * accessor method for picture path
+	 *
+	 * @return string value of picture path
+	 **/
+	public function getpicturePath() {
+		return($this->pictureCaption);
+	}
+	/**
+	 * mutator method for picture path
+	 *
+	 * @param string $newPicturePath new value of picture path
+	 * @throws \InvalidArgumentException if $newPicturePath is not a string or insecure
+	 * @throws \RangeException if $newPicturePath is > 255 characters
+	 * @throws \TypeError if $newPicturePath is not a string
+	 **/
+	public function setPicturePath(string $newPicturePath) {
+		//verify the picture path is secure
+		$newPicturePath = trim($newPicturePath);
+		$newPicturePath = filter_var($newPicturePath, FILTER_SANITIZE_STRING);
+		if(empty($newPicturePath) === true) {
+				throw(new \InvalidArgumentException("picture path is empty or insecure"));
+		}
+		//verify the picture
 	}
 }

@@ -1,3 +1,6 @@
+DROP TABLE IF EXISTS comment;
+DROP TABLE IF EXISTS picture;
+DROP TABLE IF EXISTS user;
 -- adding user entity
 CREATE TABLE user (
 	userId INT UNSIGNED AUTO_INCREMENT NOT NULL,
@@ -19,7 +22,7 @@ CREATE TABLE picture (
 	pictureId INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	pictureUserId INT UNSIGNED NOT NULL,
 	pictureCaption VARCHAR(100),
-	pictureFile VARCHAR(255),
+	picturePath VARCHAR(255),
 	pictureLocation POINT,
 	pictureTimestamp TIMESTAMP NOT NULL,
 	FOREIGN KEY (pictureUserId) REFERENCES user(userId),
