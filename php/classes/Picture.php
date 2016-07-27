@@ -326,13 +326,51 @@ class Picture {
 		$statement->setFetchMode(\PDO::FETCH_ASSOC);
 		while(($row = $statement->fetch()) !== false) {
 			try {
-					$picture = new Picture($row["pictureId"], $row["pictureUserId"], $row["pictureCaption"], $row["pictureTimestamp"]);
+					$picture = new Picture($row["pictureId"], $row["pictureUserId"], $row["pictureCaption"], $row["picturePath"], $row["pictureTimestamp"]);
 					$pictures[$pictures->key()] = $picture;
 					$pictures->next();
 			} catch(\Exception $exception) {
 					//if the row couldn't be converted, rethrow it
 					throw(new \PDOException($exception->getMessage(), 0, $exception));
 			}
+		}
+		return($pictures);
+	}
+	/**
+	 * gets the picture by user id
+	 *
+	 * @param \PDO $pdo PDO connection object
+	 * @param int $pictureUserId user id to search by
+	 * @return \SplFixedArray SplFixedArray of pictures found
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError when variables are not the correct data type
+	 **/
+	public static function getPictureIdByPictureUserId(\PDO $pdo, int $pictureUserId) {
+		//sanitize the user id before searching
+		if($pictureUserId <= 0) {
+				throw(new \RangeException("picture user id must be positive"));
+		}
+
+		//create query template
+		$query = "SELECT pictureId, pictureUserId, pictureCaption, picturePath, pictureTimestamp FROM picture WHERE pictureUserId = :pictureUserId";
+		$statement = $pdo->prepare($query);
+
+		//bind the picture user id to the placeholder in the template
+		$parameters = ["pictureUserId" => $pictureUserId];
+		$statement->execute($parameters);
+
+		//build an array of pictures
+		$pictures = new \SplFixedArray($statement->rowCount());
+		$statement->setFetchMode(\PDO::FETCH_ASSOC);
+		while(($row = $statement->fetch()) !== false) {
+				try{
+					$picture = new Picture($row["pictureId"], $row["pictureUserId"], $row["pictureCaption"], $row["picturePath"], $row["pictureTimestamp"]);
+					$pictures[$pictures->key()] = $picture;
+					$pictures->next();
+				} catch(\Exception $exception) {
+					//if the row couldn't be converted, rethrow it
+					throw(new \PDOException($exception->getMessage(), 0, $exception));
+				}
 		}
 		return($pictures);
 	}
