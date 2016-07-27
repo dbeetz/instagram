@@ -304,7 +304,7 @@ class Picture {
 	 * @throws \PDOException when mySQL related errors occur
 	 * @throws \TypeError when variables are not the correct data type
 	 **/
-	public static function getPicturebyPictureCaption(\PDO $pdo, string $pictureCaption) {
+	public static function getPictureByPictureCaption(\PDO $pdo, string $pictureCaption) {
 		//sanitize the description before searching
 		$pictureCaption = trim($pictureCaption);
 		$pictureCaption = filter_var($pictureCaption, FILTER_SANITIZE_STRING);
