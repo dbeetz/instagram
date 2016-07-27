@@ -218,15 +218,82 @@ class Picture {
 		$newPicturePath = trim($newPicturePath);
 		$newPicturePath = filter_var($newPicturePath, FILTER_SANITIZE_STRING);
 		if(empty($newPicturePath) === true) {
-				throw(new \InvalidArgumentException("picture path is empty or insecure"));
+			throw(new \InvalidArgumentException("picture path is empty or insecure"));
 		}
 
 		//verify the picture path will fit in the database
 		if(strlen($newPicturePath) > 255) {
-				throw(new \RangeException("picture path is too large"));
+			throw(new \RangeException("picture path is too large"));
 		}
 
 		//store the picture path
 		$this->picturePath = $newPicturePath;
 	}
+	/**
+	 * inserts this picture in mySQL
+	 *
+	 * @param \PDO $pdo connection object
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError if $pdo is not a PDO connection object
+	 **/
+	public function insert(\PDO $pdo) {
+		//enforce the picture id is null (i.e. don't insert a picture that already exists)
+		if($this->pictureId !== null) {
+				throw(new \PDOException("not a new picture"));
+		}
+
+		//create query template
+		$query = "INSERT INTO picture(pictureUserId, pictureCaption, picturePath, pictureTimestamp) VALUES(:pictureUserId, :pictureCaption, :picturePath, :pictureTimestamp)";
+		$statement = $pdo->prepare($query);
+
+		//bind the member variables to the place holders in the template
+		$formattedDate = $this->pictureTimestamp->format("Y-m-d H:i:s");
+		$parameters = ["pictureUserId" => $this->pictureUserId, "pictureCaption" => $this->pictureCaption, "picturePath" => $this->picturePath,  "pictureTimestamp" => $formattedDate];
+		$statement->execute($parameters);
+
+		//update the null pictureId with what mySQL just gave us
+		$this->pictureId = intval($pdo->lastInsertId());
+		}
+	/**
+	 * deletes this picture in mySQL
+	 *
+	 * @param \PDO $pdo PDO connection object
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError if $pdo is not a PDO connection object
+	 **/
+	public function delete(\PDO $pdo) {
+		//enforce that the pictureId is not null (i.e. don't delete a picture that hasn't been inserted)
+		if($this->pictureId === null) {
+				throw(new \PDOException("unable to delete a picture that does not exist"));
+		}
+		//create query template
+		$query = "DELETE FROM picture WHERE pictureId = :pictureId";
+		$statement = $pdo->prepare($query);
+
+		//bind the member variables to the place holder in the template
+		$parameters = ["pictureId" => $this->pictureId];
+		$statement->execute($parameters);
+	}
+	/**
+	 * updates this picture in mySQL
+	 *
+	 * @param \PDO $pdo PDO connection object
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError if $pdo is not a PDO connection object
+	 **/
+	public function update(\PDO $pdo) {
+		//enforce the pictureId is not null (i.e. don't update a picture that hasn't been inserted)
+		if($this->pictureId === null) {
+				throw(new \PDOException("unable to update a picture that does not exist"));
+		}
+		//create query template
+		$query = "UPDATE picture SET pictureUserId = :pictureUserId, pictureCaption = :pictureCaption, picturePath = :picturePath, pictureTimestamp = :pictureTimestamp WHERE pictureId = :pictureId";
+		$statement = $pdo->prepare($query);
+
+		//bind the member variables to the placeholders in the template
+		$formattedDate = $this->pictureTimestamp->format("Y-m-d H:i:s");
+		$parameters = ["pictureUserId" => $this->pictureUserId, "pictureCaption" => $this->pictureCaption, "picturePath" => $this->picturePath, "pictureTimestamp" => $formattedDate, "pictureId" => $this->pictureId];
+		$statement->execute($parameters);
+	}
+
 }
