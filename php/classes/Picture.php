@@ -295,5 +295,45 @@ class Picture {
 		$parameters = ["pictureUserId" => $this->pictureUserId, "pictureCaption" => $this->pictureCaption, "picturePath" => $this->picturePath, "pictureTimestamp" => $formattedDate, "pictureId" => $this->pictureId];
 		$statement->execute($parameters);
 	}
+	/**
+	 * gets the Picture by caption
+	 *
+	 * @param \PDO $pdo PDO connection object
+	 * @param string $pictureCaption picture caption to search for
+	 * @return \SplFixedArray SplFixedArray of pictures found
+	 * @throws \PDOException when mySQL related errors occur
+	 * @throws \TypeError when variables are not the correct data type
+	 **/
+	public static function getPicturebyPictureCaption(\PDO $pdo, string $pictureCaption) {
+		//sanitize the description before searching
+		$pictureCaption = trim($pictureCaption);
+		$pictureCaption = filter_var($pictureCaption, FILTER_SANITIZE_STRING);
+		if(empty($pictureCaption) === true) {
+			throw(new \PDOException("picture caption is invalid"));
+		}
 
+		//create query template
+		$query = "SELECT pictureId, pictureUserId, pictureCaption, pictureTimestamp, pictureTimestamp FROM picture WHERE pictureCaption LIKE :pictureCaption";
+		$statement = $pdo->prepare($query);
+
+		//bind the picture caption to the placeholder in the template
+		$pictureCaption = "%$pictureCaption%";
+		$parameters = ["pictureCaption" => $pictureCaption];
+		$statement->execute($parameters);
+
+		//build an array of pictures
+		$pictures = new \SplFixedArray($statement->rowCount());
+		$statement->setFetchMode(\PDO::FETCH_ASSOC);
+		while(($row = $statement->fetch()) !== false) {
+			try {
+					$picture = new Picture($row["pictureId"], $row["pictureUserId"], $row["pictureCaption"], $row["pictureTimestamp"]);
+					$pictures[$pictures->key()] = $picture;
+					$pictures->next();
+			} catch(\Exception $exception) {
+					//if the row couldn't be converted, rethrow it
+					throw(new \PDOException($exception->getMessage(), 0, $exception));
+			}
+		}
+		return($pictures);
+	}
 }
