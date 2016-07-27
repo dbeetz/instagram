@@ -345,7 +345,7 @@ class Picture {
 	 * @throws \PDOException when mySQL related errors occur
 	 * @throws \TypeError when variables are not the correct data type
 	 **/
-	public static function getPictureIdByPictureUserId(\PDO $pdo, int $pictureUserId) {
+	public static function getPictureByPictureUserId(\PDO $pdo, int $pictureUserId) {
 		//sanitize the user id before searching
 		if($pictureUserId <= 0) {
 				throw(new \RangeException("picture user id must be positive"));
