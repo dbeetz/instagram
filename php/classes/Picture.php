@@ -202,7 +202,7 @@ class Picture {
 	 *
 	 * @return string value of picture path
 	 **/
-	public function getpicturePath() {
+	public function getPicturePath() {
 		return($this->pictureCaption);
 	}
 	/**
